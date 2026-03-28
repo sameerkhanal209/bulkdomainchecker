@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
   description: 'Check domain availability in bulk, generate domain name ideas, and review available or taken domains for your next website, startup, or brand.',
   keywords: ['bulk domain checker', 'domain name generator', 'domain availability checker', 'available domain names', 'domain ideas', 'Sameer Khanal'],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
     description: 'Check domain availability in bulk and generate domain name ideas for your next brand or website.',
