@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
     description: 'Check domain availability in bulk and generate domain name ideas for your next brand or website.',
-    url: 'https://your-domain.example',
+    url: 'https://bulkdomainchecker.vercel.app',
     type: 'website',
   },
   twitter: {
