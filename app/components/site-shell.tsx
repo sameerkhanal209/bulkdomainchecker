@@ -4,12 +4,15 @@ import Link from "next/link";
 import { ReactNode } from "react";
 
 type SiteShellProps = {
-  activePage: "checker" | "generator";
+  activePage: "checker" | "generator" | "whois";
   topbarTitle: string;
   children: ReactNode;
 };
 
 export default function SiteShell({ activePage, topbarTitle, children }: SiteShellProps) {
+  const topbarHref =
+    activePage === "whois" ? "/whois-checker" : activePage === "generator" ? "/domain-name-generator" : "/";
+
   return (
     <main className="theme-page">
       <header className="theme-topbar">
@@ -18,7 +21,7 @@ export default function SiteShell({ activePage, topbarTitle, children }: SiteShe
             Bulk Domain Checker
           </Link>
         </div>
-        <Link className="theme-topbar-title" href="/domain-name-generator">
+        <Link className="theme-topbar-title" href={topbarHref}>
           {topbarTitle}
         </Link>
       </header>
@@ -31,6 +34,9 @@ export default function SiteShell({ activePage, topbarTitle, children }: SiteShe
             </Link>
             <Link className={activePage === "generator" ? "nav-item active" : "nav-item"} href="/domain-name-generator">
               Domain Name Generator
+            </Link>
+            <Link className={activePage === "whois" ? "nav-item active" : "nav-item"} href="/whois-checker">
+              WHOIS Checker
             </Link>
           </nav>
 

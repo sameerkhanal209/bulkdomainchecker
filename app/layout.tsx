@@ -8,24 +8,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
-  description: 'Check domain availability in bulk, generate domain name ideas, and review available or taken domains for your next website, startup, or brand.',
-  keywords: ['bulk domain checker', 'domain name generator', 'domain availability checker', 'available domain names', 'domain ideas', 'Sameer Khanal'],
+  title: 'Bulk Domain Checker, Domain Name Generator & WHOIS Checker',
+  description: 'Check domain availability in bulk, generate domain name ideas, and look up WHOIS details including registrar, nameservers, and registration dates.',
+  keywords: ['bulk domain checker', 'domain name generator', 'whois checker', 'domain availability checker', 'available domain names', 'domain ideas', 'Sameer Khanal'],
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
   openGraph: {
-    title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
-    description: 'Check domain availability in bulk and generate domain name ideas for your next brand or website.',
+    title: 'Bulk Domain Checker, Domain Name Generator & WHOIS Checker',
+    description: 'Check domain availability in bulk, generate domain name ideas, and look up WHOIS details for your next brand or website.',
     url: 'https://bulkdomainchecker.vercel.app',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bulk Domain Checker & Domain Name Generator | Find Available Domains Fast',
-    description: 'Check domain availability in bulk and generate domain name ideas for your next brand or website.',
+    title: 'Bulk Domain Checker, Domain Name Generator & WHOIS Checker',
+    description: 'Check domain availability in bulk, generate domain name ideas, and look up WHOIS details for your next brand or website.',
   },
 };
 

@@ -14,11 +14,11 @@ const registerUrl = "https://www.namesilo.com/register.php?rid=6309463gf";
 const featureCards = [
   {
     title: "Bulk domain checker",
-    copy: "Check multiple domain names at once when you already have a shortlist and want a faster review.",
+    copy: "Check multiple domain names at once across common TLDs when you already have a shortlist and want a faster review.",
   },
   {
     title: "Domain Name Generator",
-    copy: "Start with one keyword and generate more common, usable domain combinations around it.",
+    copy: "Start with one keyword and generate more common, usable .com combinations around it.",
   },
   {
     title: "Availability review",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     question: "Do I need to use only .com?",
-    answer: "The checker supports mixed extensions. The generator currently focuses on .com suggestions.",
+    answer: "No. The bulk checker and WHOIS checker support mixed extensions. Only the Domain Name Generator is .com-focused right now.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function HomePage() {
       <section className="hero">
         <h1 className="hero-title">Search domains in bulk and build a stronger shortlist.</h1>
         <p className="hero-copy">
-          Use this bulk domain checker to test domain availability, or switch to the Domain Name Generator when you need more ideas for a business, project, or website.
+          Use the bulk checker for mixed TLDs like .com, .net, .org, and .io, or switch to the Domain Name Generator when you want .com-only name ideas.
         </p>
       </section>
 
@@ -120,7 +120,7 @@ export default function HomePage() {
           <div className="panel-head">
             <div>
               <h2>Bulk checker</h2>
-              <p>Check domain names in bulk, one per line.</p>
+              <p>Check domain names in bulk across multiple TLDs, one per line.</p>
             </div>
             <div className="summary-pills">
               <span>{parsedDomains.length}/15 added</span>
@@ -140,7 +140,7 @@ export default function HomePage() {
               <button type="submit" className="primary-button" disabled={loading}>
                 {loading ? "Checking..." : "Check domains"}
               </button>
-              <span className="helper-copy">Mixed extensions are supported.</span>
+              <span className="helper-copy">Supports .com, .net, .org, .io, .dev, and other standard TLDs.</span>
             </div>
           </form>
 
@@ -151,7 +151,7 @@ export default function HomePage() {
           <div className="side-group">
             <div className="side-title">Quick start</div>
             <div className="side-body">
-              Start with your current shortlist, then use the generator to find more available domain ideas around the same keyword.
+              Start with your current shortlist in any TLD, then use the generator when you want extra .com ideas around the same keyword.
             </div>
           </div>
 
@@ -206,7 +206,7 @@ export default function HomePage() {
         <div className="section-copy">
           <h2>Use the right tool at the right step</h2>
           <p>
-            The homepage works best when you already have domain candidates. The Domain Name Generator is better for brainstorming common domain name patterns around a keyword.
+            The homepage works best when you already have domain candidates in different extensions. The Domain Name Generator is better for brainstorming .com patterns around a keyword.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function HomePage() {
         <div className="section-copy">
           <h2>Browse common naming directions</h2>
           <p>
-            Explore more domain ideas by keyword, compare short and long variations, and keep the names that are still available.
+            Explore more .com domain ideas by keyword, compare short and long variations, and keep the names that are still available.
           </p>
         </div>
 

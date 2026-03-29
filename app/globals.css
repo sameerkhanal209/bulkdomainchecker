@@ -128,6 +128,7 @@ p {
   display: flex;
   justify-content: flex-end;
   gap: 36px;
+  flex-wrap: wrap;
   margin-bottom: 12px;
 }
 
@@ -192,7 +193,7 @@ p {
   color: var(--foreground);
   font-size: 15px;
   font-weight: 600;
-  padding: 0;
+  padding: 16px 0;
 }
 
 .search-field::placeholder {
@@ -442,7 +443,12 @@ textarea {
 
 .results-table {
   width: 100%;
+  min-width: 640px;
   border-collapse: collapse;
+}
+
+.results-table-panel {
+  overflow-x: auto;
 }
 
 .results-table th,
@@ -785,6 +791,184 @@ textarea {
   flex-wrap: wrap;
 }
 
+.whois-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.dns-layout,
+.whois-main-stack {
+  display: grid;
+  gap: 20px;
+}
+
+.whois-layout > *,
+.dns-layout > *,
+.whois-main-stack,
+.whois-side-grid,
+.whois-info-grid,
+.dns-record-grid {
+  min-width: 0;
+}
+
+.whois-main-card,
+.whois-list-card,
+.whois-info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.whois-main-card,
+.whois-list-card {
+  padding: 22px;
+}
+
+.whois-side-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.whois-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.whois-domain {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+}
+
+.whois-message {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+}
+
+.whois-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.whois-info-card {
+  padding: 16px;
+}
+
+.whois-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.whois-value {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--foreground);
+  word-break: break-word;
+}
+
+.whois-list-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.whois-contact-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.whois-contact-group-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.whois-contact-group {
+  display: grid;
+  gap: 12px;
+}
+
+.whois-contact-group-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--secondary-foreground);
+}
+
+.whois-contact-card {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--input);
+}
+
+.whois-contact-role {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--secondary-foreground);
+  margin-bottom: 8px;
+}
+
+.whois-contact-details {
+  display: grid;
+  gap: 6px;
+  color: var(--muted-foreground);
+  word-break: break-word;
+}
+
+.whois-contact-details strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.whois-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.dns-record-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.dns-record-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  background: var(--input);
+}
+
+.dns-record-type {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--secondary-foreground);
+  margin-bottom: 10px;
+}
+
+.whois-list li,
+.whois-empty {
+  color: var(--muted-foreground);
+  word-break: break-word;
+}
+
+.whois-list li a {
+  word-break: break-all;
+}
+
 @keyframes loader-bounce {
   0%, 80%, 100% {
     transform: scale(0.7);
@@ -800,7 +984,9 @@ textarea {
   .homepage-grid,
   .content-grid,
   .feature-grid,
-  .tool-grid {
+  .tool-grid,
+  .whois-layout,
+  .dns-record-grid {
     grid-template-columns: 1fr;
   }
 
@@ -811,7 +997,11 @@ textarea {
 
 @media (max-width: 720px) {
   .theme-topbar {
+    height: auto;
     padding: 0 16px;
+    min-height: 52px;
+    flex-wrap: wrap;
+    gap: 6px 14px;
   }
 
   .theme-topbar-title {
@@ -836,6 +1026,11 @@ textarea {
     gap: 20px;
   }
 
+  .panel-head,
+  .whois-head {
+    flex-direction: column;
+  }
+
   .search-bar {
     grid-template-columns: 1fr;
     height: auto;
@@ -846,6 +1041,10 @@ textarea {
   }
 
   .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whois-info-grid {
     grid-template-columns: 1fr;
   }
 
