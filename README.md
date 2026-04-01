@@ -93,7 +93,3 @@ lib/
 - Caches are in memory. They reset when the server restarts.
 - The current generator focuses on `.com`.
 - The bulk checker accepts mixed extensions.
-
-## License
-
-Add a license file if you plan to publish the repository publicly.
